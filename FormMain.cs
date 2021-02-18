@@ -101,7 +101,7 @@ namespace blog_management
                 byte[] buffer = File.ReadAllBytes(Strpath);  //以二进制方式读取文本文件并返回byte数组
 
                 //获得文章内容
-                string StrContent = Encoding.Default.GetString(buffer); //以默认编码方式将二进制数组转换成string类型变量并返回
+                string StrContent = Encoding.UTF8.GetString(buffer);//以UTF-8编码方式将二进制数组转换成string类型变量并返回
 
                 //获取文章描述
                 description = Regex.Replace(StrContent, "```([\\w\\W]*)```", "").Replace(" ", "").Replace("#", "").Replace("-", "").Replace("\n", "").Replace("\r", "").Replace("*", "");
